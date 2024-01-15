@@ -47,8 +47,8 @@ export const metadata: Metadata = {
     url: 'https://xieyezi.site/',
   },
   twitter: {
-    site: '@thecalicastle',
-    creator: '@thecalicastle',
+    site: '@xieyezi666',
+    creator: '@xieyezi666',
     card: 'summary_large_image',
     title: seo.title,
     description: seo.description,

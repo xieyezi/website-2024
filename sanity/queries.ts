@@ -4,6 +4,7 @@ import { getDate } from '~/lib/date'
 import { clientFetch } from '~/sanity/lib/client'
 import { type Post, type PostDetail } from '~/sanity/schemas/post'
 import { type Project } from '~/sanity/schemas/project'
+import { type Use } from '~/sanity/schemas/use'
 
 export const getAllLatestBlogPostSlugsQuery = () =>
   groq`
@@ -110,3 +111,18 @@ export const getSettingsQuery = () =>
 }`
 export const getSettings = () =>
   clientFetch<{ projects: Project[] | null }>(getSettingsQuery())
+
+
+
+  export const getUsesQuery = () =>
+  groq`
+  *[_type == "use"]{
+    _id,
+    name,
+    url,
+    description,
+    icon
+}`
+export const getUses = () =>
+  clientFetch<{ uses: Use[] | null }>(getUsesQuery())
+

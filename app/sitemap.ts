@@ -18,6 +18,10 @@ export default async function sitemap() {
       lastModified: new Date(),
     },
     {
+      url: url('/use').href,
+      lastModified: new Date(),
+    },
+    {
       url: url('/guestbook').href,
       lastModified: new Date(),
     },

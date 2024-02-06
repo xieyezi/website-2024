@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     default: seo.title,
   },
   description: seo.description,
-  keywords: 'xieyezi,CEO,前端工程师,架构师,细节控,创新',
+  keywords: 'xieyezi,前端工程师,架构师,细节控',
   themeColor: [
     { media: '(prefers-color-scheme: dark)', color: '#000212' },
     { media: '(prefers-color-scheme: light)', color: '#fafafa' },

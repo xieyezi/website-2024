@@ -4,7 +4,8 @@ import React from 'react'
 import { BriefcaseIcon } from '~/assets'
 import burnishLogo from '~/assets/company/burnish.png'
 import caLogo from '~/assets/company/ca.png'
-import wubidaLogo from '~/assets/company/wubida.jpeg'
+import distanceLogo from "~/assets/company/distance.png"
+import wifiLogo from '~/assets/company/wifi.png'
 
 type Resume = {
   company: string
@@ -15,12 +16,22 @@ type Resume = {
 }
 const resume: Resume[] = [
   {
+    company: '秒差距科技',
+    title: '前端工程师',
+    logo: distanceLogo,
+    start: '2024',
+    end: {
+      label: '至今',
+      dateTime: new Date().getFullYear(),
+    },
+  },
+  {
     company: '长安汽车',
     title: '前端架构师',
     logo: caLogo,
     start: '2022',
     end: {
-      label: '至今',
+      label: '2024',
       dateTime: new Date().getFullYear(),
     },
   },
@@ -32,9 +43,9 @@ const resume: Resume[] = [
     end: '2022',
   },
   {
-    company: '物必达科技有限公司（宗申）',
+    company: 'WIFI万能钥匙（盛大）',
     title: '前端工程师',
-    logo: wubidaLogo,
+    logo: wifiLogo,
     start: '2019',
     end: '2020',
   },

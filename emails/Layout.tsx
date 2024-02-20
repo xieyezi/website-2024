@@ -74,12 +74,12 @@ export default function Layout({
                   GitHub
                 </Link>{' '}
                 |&nbsp;
-                <Link
+                {/*<Link
                   href="https://xieyezi.site/bilibili"
                   className="text-xs text-zinc-600 underline"
                 >
                   哔哩哔哩
-                </Link>
+                </Link>*/}
               </Text>
             </Section>
           </Container>

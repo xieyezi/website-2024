@@ -161,11 +161,11 @@ export function Headline() {
           aria-label="我的 YouTube"
           platform="youtube"
         />*/}
-        <SocialLink
+        /*<SocialLink
           href="https://xieyezi.site/bilibili"
           aria-label="我的 Bilibili"
           platform="bilibili"
-        />
+        />*/
         {/*<SocialLink
           href="https://xieyezi.site/tg"
           aria-label="我的 Telegram"

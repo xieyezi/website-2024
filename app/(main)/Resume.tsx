@@ -16,8 +16,8 @@ type Resume = {
 }
 const resume: Resume[] = [
   {
-    company: '秒差距科技',
-    title: '前端工程师',
+    company: 'Parsec Technology Co., Ltd.',
+    title: 'Frontend Engineer (Remote)',
     logo: distanceLogo,
     start: '2024',
     end: {

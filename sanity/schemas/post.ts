@@ -30,26 +30,25 @@ export const Post = z.object({
 })
 export type Post = z.infer<typeof Post>
 export type PostDetail = Post & {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   headings: any[]
   related?: Post[]
 }
 
 export default defineType({
   name: 'post',
-  title: '文章',
+  title: 'Post',
   type: 'document',
   icon: PencilSwooshIcon,
   fields: [
     defineField({
       name: 'title',
-      title: '标题',
+      title: 'Title',
       type: 'string',
       validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: 'slug',
-      title: '链接标识符',
+      title: 'Slug',
       type: 'slug',
       options: {
         source: 'title',
@@ -59,19 +58,19 @@ export default defineType({
     }),
     defineField({
       name: 'categories',
-      title: '分类',
+      title: 'Categories',
       type: 'array',
       of: [{ type: 'reference', to: { type: 'category' } }],
     }),
     defineField({
       name: 'publishedAt',
-      title: '发布时间',
+      title: 'Published at',
       type: 'datetime',
       validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: 'mainImage',
-      title: '主图',
+      title: 'Main image',
       type: 'image',
       description: 'This image will be used for the preview (1200 x 675px)',
       options: {
@@ -81,28 +80,26 @@ export default defineType({
     }),
     defineField({
       name: 'description',
-      title: '简介',
+      title: 'Description',
       type: 'text',
       rows: 3,
       validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: 'body',
-      title: '内容',
+      title: 'Body',
       type: 'blockContent',
     }),
     defineField({
       name: 'readingTime',
-      title: '阅读时长（分钟）',
       type: readingTimeType.name,
-      validation: (Rule) => Rule.required(),
       options: {
         source: 'body',
       },
     }),
     defineField({
       name: 'mood',
-      title: '文章情绪',
+      title: 'Mood',
       type: 'string',
       options: {
         list: [
@@ -118,7 +115,6 @@ export default defineType({
   initialValue: () => ({
     publishedAt: new Date().toISOString(),
     mood: 'neutral',
-    readingTime: 0,
   }),
 
   preview: {

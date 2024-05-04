@@ -14,7 +14,7 @@ import { Tweet } from '~/sanity/components/Tweet'
  */
 
 export default defineType({
-  title: '块级富文本',
+  title: 'Block Content',
   name: 'blockContent',
   type: 'array',
   of: [
@@ -25,40 +25,38 @@ export default defineType({
       // set corresponds with HTML tags, but you can set any title or value
       // you want, and decide how you want to deal with it where you want to
       // use your content.
-      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-      // @ts-ignore
       styles: [
-        { title: '正文', value: 'normal' },
+        { title: 'Normal', value: 'normal' },
         { title: 'H1', value: 'h1' },
         { title: 'H2', value: 'h2' },
         { title: 'H3', value: 'h3' },
         { title: 'H4', value: 'h4' },
-        { title: '引用', value: 'blockquote' },
+        { title: 'Quote', value: 'blockquote' },
       ],
       lists: [
-        { title: '无序列表', value: 'bullet' },
-        { title: '有序列表', value: 'number' },
+        { title: 'Bullet', value: 'bullet' },
+        { title: 'Numbered', value: 'number' },
       ],
       // Marks let you mark up inline text in the Portable Text Editor
       marks: {
         // Decorators usually describe a single property – e.g. a typographic
         // preference or highlighting
         decorators: [
-          { title: '加粗', value: 'strong' },
-          { title: '斜体', value: 'em' },
-          { title: '下划线', value: 'underline' },
-          { title: '删除线', value: 'strike-through' },
-          { title: '代码', value: 'code' },
+          { title: 'Strong', value: 'strong' },
+          { title: 'Emphasis', value: 'em' },
+          { title: 'Underline', value: 'underline' },
+          { title: 'Strike', value: 'strike-through' },
+          { title: 'Code', value: 'code' },
         ],
         // Annotations can be any object structure – e.g. a link or a footnote.
         annotations: [
           {
-            title: '链接',
+            title: 'URL',
             name: 'link',
             type: 'object',
             fields: [
               {
-                title: '链接',
+                title: 'URL',
                 name: 'href',
                 type: 'url',
               },
@@ -72,38 +70,32 @@ export default defineType({
     // as a block type.
     defineArrayMember({
       type: 'image',
-      title: '图片',
       options: { hotspot: true },
-      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-      // @ts-ignore
       fields: [
         {
           name: 'alt',
           type: 'string',
-          title: '替代文本',
+          title: 'Alternative Text',
         },
         {
           name: 'label',
           type: 'string',
-          title: '标注',
+          title: 'Label',
         },
       ],
     }),
     defineArrayMember({
       type: 'object',
       name: 'tweet',
-      title: '推文',
-      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-      // @ts-ignore
+      title: 'Tweet',
       fields: [
         {
           name: 'id',
           type: 'string',
-          title: '推文 ID',
+          title: 'Tweet ID',
         },
       ],
       components: {
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         preview: Tweet as any,
       },
       preview: {
@@ -115,7 +107,7 @@ export default defineType({
     defineArrayMember({
       type: 'code',
       name: 'codeBlock',
-      title: '代码块',
+      title: 'Code Block',
       options: {
         withFilename: true,
       },

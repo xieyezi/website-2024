@@ -4,18 +4,18 @@ import { ScriptIcon } from '~/assets'
 
 export default defineType({
   name: 'category',
-  title: '分类',
+  title: 'Category',
   type: 'document',
   icon: ScriptIcon,
   fields: [
     defineField({
       name: 'title',
-      title: '名称',
+      title: 'Title',
       type: 'string',
     }),
     defineField({
       name: 'slug',
-      title: '链接标识符',
+      title: 'Slug',
       type: 'slug',
       options: {
         source: 'title',
@@ -23,7 +23,7 @@ export default defineType({
     }),
     defineField({
       name: 'description',
-      title: '简单介绍',
+      title: 'Description',
       type: 'text',
     }),
   ],

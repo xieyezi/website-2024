@@ -38,8 +38,8 @@ function AvatarImage({
       {...props}
     >
       <Image
-        src={xieyeziImg}
-        alt=""
+        src={alt ? xieyeziImg: xieyeziImg}
+        alt={""}
         sizes={large ? '4rem' : '2.25rem'}
         className={clsxm(
           'rounded-full bg-zinc-100 object-cover dark:bg-zinc-800',

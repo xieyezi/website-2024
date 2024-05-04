@@ -58,7 +58,7 @@ export async function GET(req: NextRequest, { params }: Params) {
 
     return NextResponse.json(
       data.map(
-        ({ id, parentId, ...rest }: any) =>
+        ({ id, parentId, ...rest }) =>
           ({
             ...rest,
             id: CommentHashids.encode(id),
@@ -164,7 +164,7 @@ export async function POST(req: NextRequest, { params }: Params) {
 
     return NextResponse.json({
       ...commentData,
-      id: CommentHashids.encode((newComment as any).newId),
+      id: CommentHashids.encode(newComment.newId),
       createdAt: new Date(),
       parentId: hashedParentId,
     } satisfies CommentDto)

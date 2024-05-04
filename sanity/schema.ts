@@ -7,8 +7,7 @@ import category from './schemas/category'
 import post from './schemas/post'
 import project from './schemas/project'
 import settings from './schemas/settings'
-import use from "./schemas/use"
 
 export const schema: { types: SchemaTypeDefinition[] } = {
-  types: [readingTimeType, post, category, blockContent, project, settings, use],
+  types: [readingTimeType, post, category, blockContent, project, settings],
 }

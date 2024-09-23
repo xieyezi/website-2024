@@ -13,12 +13,12 @@ import image6 from '~/assets/highlights/6.jpg'
 
 const images = [image1, image2, image3, image4, image5, image6]
 const alts = [
-  '摄于照母山',
-  '摄于大竹林',
-  '家里新买的鸭脚木',
-  '我的猫在看影子',
-  '猛虎下山',
-  '我弹着吉他向我的女友求婚',
+  '石柱龙潭玩水嬉戏',
+  '万州烤鱼城',
+  '家附近的夕阳',
+  '老家的夕阳',
+  '老家的稻田',
+  '金佛山',
 ]
 
 export function Photos() {

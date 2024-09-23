@@ -107,9 +107,16 @@ const renderStepPage = useCallback(() => {
 
 ## undefined 的锅
 
-我试着按照我之前的思路逐个进行排查，最终我发现居然是 `undefined` 导致的这个问题。怎么回事呢，听我慢慢道来。第一次初始化的时候，`fetchStep` 里面 执行 `setOnboarding` 的时候，把 `onboarding.currentStep` 设置为 `undefined` 了，当我们点击 + 1的时候， `undefined + 1 = NaN`，这个时候不就没反应了吗。。。那为什么刷新一下又可以了呢？原来刷新页面之后， `onboarding.currentStep` 又被设置为 `null` 了，而 `null + 1 = 1`，所以这就是问题所在。
+我试着按照我之前的思路逐个进行排查，最终我发现居然是 `undefined` 导致的这个问题。怎么回事呢，听我慢慢道来。第一次初始化的时候，我是在 `Onboarding` 页面直接初始化的 `onboarding`，然后将其传入了一个 `useOnboarding` 的 `hook`（历史原因，所以一开始没将其直接放进 `hook` 里面，而是通过传参的方式传入）:
+```tsx
+const [onboarding, setOnboarding] = useState<Onboarding | null>({ currentStep: 1 })
+...
+const {currentStep} = useOnboarding(onboarding)
+```
 
-那为什么在我本地没有问题呢，因为我本地有热更新，`onboarding.currentStep` 会一直被设置成 `null`，我还傻傻以为是正常的1。最终的解决方法就是在 `fetchStep` 里面判断是否有值，如果没有值，就直接将 `onboarding.currentStep` 设置为1。
+最开始 `onboarding` 里面的 `currentStep` 的确为1，接着`fetchStep` 里面 执行 `setOnboarding` 的时候，把 `onboarding.currentStep` 设置为 `undefined` 了，当我们点击 + 1的时候， `undefined + 1 = NaN`，这个时候不就没反应了吗。。。那为什么刷新一下又可以了呢？原来刷新页面之后， `onboarding.currentStep` 又被设置为 `null` 了，而 `null + 1 = 1`，所以这就是问题所在。
+
+那为什么在我本地没有问题呢，因为我本地有热更新，`onboarding.currentStep` 会一直被设置成 `null`，我还傻傻以为是正常的1。最终的解决方法就是将 `onboarding`初始化直接搬进`useOnboarding`里面(而不是通过参数传进去，糊涂啊)，同时在 `fetchStep` 里面判断是否有值，如果没有值，就直接将 `onboarding.currentStep` 设置为1。
 
 ```tsx
 undefined + 1 = NaN

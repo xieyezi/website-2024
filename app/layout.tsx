@@ -44,7 +44,7 @@ export const metadata: Metadata = {
     siteName: 'xieyezi',
     locale: 'zh_CN',
     type: 'website',
-    url: 'https://xieyezi.site/',
+    url: 'https://me.xieyezi.us:5003/',
   },
   twitter: {
     site: '@xieyezi666',

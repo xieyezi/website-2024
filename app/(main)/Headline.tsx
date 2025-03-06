@@ -147,27 +147,27 @@ export function Headline() {
         }}
       >
         <SocialLink
-          href="https://xieyezi.site/github"
+          href="https://me.xieyezi.us:5003/github"
           aria-label="我的 GitHub"
           platform="github"
         />
         <SocialLink
-          href="https://xieyezi.site/twitter"
+          href="https://me.xieyezi.us:5003/twitter"
           aria-label="我的推特"
           platform="twitter"
         />
         {/*<SocialLink
-          href="https://xieyezi.site/youtube"
+          href="https://me.xieyezi.us:5003/youtube"
           aria-label="我的 YouTube"
           platform="youtube"
         />*/}
         {/*<SocialLink
-          href="https://xieyezi.site/bilibili"
+          href="https://me.xieyezi.us:5003/bilibili"
           aria-label="我的 Bilibili"
           platform="bilibili"
         />*/}
         {/*<SocialLink
-          href="https://xieyezi.site/tg"
+          href="https://me.xieyezi.us:5003/tg"
           aria-label="我的 Telegram"
           platform="telegram"
         />*/}

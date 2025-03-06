@@ -13,13 +13,13 @@ function getKey(url: string) {
 
 const faviconMapper: { [key: string]: string } = {
   '((?:zolplay.cn)|(?:zolplay.com)|(?:cn.zolplay.com))':
-    'https://xieyezi.site/favicons/zolplay.png',
-  '(?:github.com)': 'https://xieyezi.site/favicons/github.png',
+    'https://me.xieyezi.us:5003/favicons/zolplay.png',
+  '(?:github.com)': 'https://me.xieyezi.us:5003/favicons/github.png',
   '((?:t.co)|(?:twitter.com)|(?:x.com))':
-    'https://xieyezi.site/favicons/twitter.png',
-  'coolshell.cn': 'https://xieyezi.site/favicons/coolshell.png',
-  'vercel.com': 'https://xieyezi.site/favicons/vercel.png',
-  'nextjs.org': 'https://xieyezi.site/favicons/nextjs.png',
+    'https://me.xieyezi.us:5003/favicons/twitter.png',
+  'coolshell.cn': 'https://me.xieyezi.us:5003/favicons/coolshell.png',
+  'vercel.com': 'https://me.xieyezi.us:5003/favicons/vercel.png',
+  'nextjs.org': 'https://me.xieyezi.us:5003/favicons/nextjs.png',
 }
 
 function getPredefinedIconForUrl(url: string): string | undefined {
@@ -62,7 +62,7 @@ export async function GET(req: NextRequest) {
     return NextResponse.error()
   }
 
-  let iconUrl = 'https://xieyezi.site/favicon_blank.png'
+  let iconUrl = 'https://me.xieyezi.us:5003/favicon_blank.png'
 
   try {
     const predefinedIcon = getPredefinedIconForUrl(url)

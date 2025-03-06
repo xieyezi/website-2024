@@ -44,7 +44,7 @@ export default function Layout({
               />
               <Text className="text-center">
                 <Link
-                  href="https://xieyezi.site/"
+                  href="https://me.xieyezi.us:5003/"
                   className="text-zinc-700 underline"
                 >
                   <strong>xieyezi</strong>
@@ -54,28 +54,28 @@ export default function Layout({
               </Text>
               <Text className="text-center">
                 <Link
-                  href="https://xieyezi.site/twitter"
+                  href="https://me.xieyezi.us:5003/twitter"
                   className="text-xs text-zinc-600 underline"
                 >
                   Twitter
                 </Link>{' '}
                 |&nbsp;
                 {/*<Link
-                  href="https://xieyezi.site/youtube"
+                  href="https://me.xieyezi.us:5003/youtube"
                   className="text-xs text-zinc-600 underline"
                 >
                   YouTube
                 </Link>{' '}
                 |&nbsp;*/}
                 <Link
-                  href="https://xieyezi.site/github"
+                  href="https://me.xieyezi.us:5003/github"
                   className="text-xs text-zinc-600 underline"
                 >
                   GitHub
                 </Link>{' '}
                 |&nbsp;
                 {/*<Link
-                  href="https://xieyezi.site/bilibili"
+                  href="https://me.xieyezi.us:5003/bilibili"
                   className="text-xs text-zinc-600 underline"
                 >
                   哔哩哔哩
